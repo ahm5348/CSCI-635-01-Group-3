@@ -21,7 +21,7 @@ def normalize_data(X, y, random_state=0):
     smote = over.SMOTE(random_state=random_state)
     X_smote, y_smote = smote.fit_resample(X, y)
 
-    return X, y
+    return X_smote, y_smote
 
 
 def shap_processing(model, X_test):
