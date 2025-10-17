@@ -15,6 +15,26 @@ def clean_data(X, y):
     return X_clean, y_clean
 
 
+def normalize_data(X, y, random_state=0):
+    import imblearn.over_sampling as over   # optional part so import separate
+    # simple implementation that uses SMOTE
+    smote = over.SMOTE(random_state=random_state)
+    X_smote, y_smote = smote.fit_resample(X, y)
+
+    return X, y
+
+
+def shap_processing(model, X_test):
+    import shap
+    explainer = shap.Explainer(model)
+    explained_values = explainer(X_test)
+    shap.initjs()       # for JavaScript support in notebooks
+
+    shap.summary_plot(explained_values, X_test)
+
+    return
+
+
 def scale_data(X_train, X_test, y_train, y_test):
    
     scaler = StandardScaler()
@@ -27,7 +47,9 @@ def scale_data(X_train, X_test, y_train, y_test):
 
 
 def split_data(X, y, test_size=0.2, random_state=0):
-    return train_test_split(X, y, test_size=test_size, random_state=random_state)
+    # stratification for handling imbalanced data
+    return train_test_split(X, y, test_size=test_size, random_state=random_state, stratify=y)
+
 
 
 
