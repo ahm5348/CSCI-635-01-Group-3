@@ -6,3 +6,4 @@ ipykernel
 ucimlrepo
 imblearn
 shap
+tensorflow
