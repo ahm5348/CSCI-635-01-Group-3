@@ -1,4 +1,5 @@
 import pandas as pd
+from imblearn.over_sampling import RandomOverSampler
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
@@ -51,6 +52,18 @@ def split_data(X, y, test_size=0.2, random_state=0):
     return train_test_split(X, y, test_size=test_size, random_state=random_state, stratify=y)
 
 
+def naive_oversample_data(X, y, random_state=0):
+    from imblearn.over_sampling import RandomOverSampler
+    sampler = RandomOverSampler(sampling_strategy='auto', random_state=random_state)
+    X, y = sampler.fit_resample(X, y)
+    return X, y
+
+
+def naive_undersample_data(X, y, random_state=0):
+    from imblearn.under_sampling import RandomUnderSampler
+    sampler = RandomUnderSampler(random_state=random_state)
+    X, y = sampler.fit_resample(X, y)
+    return X, y
 
 
 
