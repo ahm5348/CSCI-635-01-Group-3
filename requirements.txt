@@ -7,3 +7,5 @@ ucimlrepo
 imblearn
 shap
 tensorflow
+keras
+keras-tuner
