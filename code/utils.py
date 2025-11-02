@@ -1,9 +1,10 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-import pandas as pd
-import numpy as np
+from sklearn.metrics import accuracy_score, make_scorer, matthews_corrcoef, confusion_matrix, classification_report, ConfusionMatrixDisplay
 
 def clean_data(X, y):
     combined = pd.concat([X, y], axis=1)
@@ -66,5 +67,16 @@ def naive_undersample_data(X, y, random_state=0):
     return X, y
 
 
+def get_evaluations(y_test, y_test_pred):
+    print("Test Accuracy:", accuracy_score(y_test, y_test_pred))
 
-    
+    print("Test MCC:", matthews_corrcoef(y_test, y_test_pred))
+
+    print("\nConfusion Matrix:")
+    print(confusion_matrix(y_test, y_test_pred))
+
+    print("\nClassification Report:")
+    print(classification_report(y_test, y_test_pred))
+
+    ConfusionMatrixDisplay.from_predictions(y_test, y_test_pred, cmap="Blues")
+    plt.show()
