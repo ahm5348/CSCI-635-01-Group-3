@@ -80,3 +80,10 @@ def get_evaluations(y_test, y_test_pred):
 
     ConfusionMatrixDisplay.from_predictions(y_test, y_test_pred, cmap="Blues")
     plt.show()
+
+
+def class_weight_balance(y_train):
+    from sklearn.utils import class_weight
+    weights = class_weight.compute_class_weight('balanced', classes=np.unique(y_train), y=y_train)
+    class_weight_dict = dict(enumerate(weights))
+    return class_weight_dict
