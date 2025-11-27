@@ -8,8 +8,20 @@ This project aims to predict the forest cover type from cartographic variables o
 
 ## Developers
 
-Adrian Lariani -
-Aidan Mayes Poduslo -
+#### Adrian Lariani
+
+- **decisionTree.ipynb**: model selection, training, testing, and evaluating
+- **knn.ipynb**: model selection, training, testing, and evaluating
+- **neuralNetwork.ipynb**: some model exploration
+- **bestModels.ipynb**: Model Metrics sections
+- **dataAnalysis.ipynb**: Data exploration and graphing
+
+#### Aidan Mayes Poduslo
+
+- **neuralNetwork.ipynb**: model selection, training, testing, and evaluating
+- **bestModels.ipynb**: Models SHAP Interpretibility sections
+- **dataAnalysis.ipynb**: Data balancing
+- **utils.py**: utility functions including preprocessing, shap, and more
 
 ## Repository Structure
 
@@ -64,4 +76,3 @@ https://archive.ics.uci.edu/dataset/31/covertype
 
 2. Navigate to code/ directory and open on of the .ipynb files
 3. Run the cells in a .ipynb file sequentially to perform data preprocessing, training of the models, evaluation metrics, and visualizations of the results
-
