@@ -26,20 +26,22 @@ This project aims to predict the forest cover type from cartographic variables o
 ## Repository Structure
 
 ````
-├── code/                           # Contains all source code, scripts, and Jupyter notebooks
-│   └── decisionTree.ipynb          # Notebook with code on training process of the decision tree model
-│   └── knn.ipynb                   # Notebook with code on training process of the knn model
-│   └── neuralNetwork.ipynb         # Notebook with code on training process of the neuralNetwork model
-│   └── bestModels.ipynb            # Notebook with code on evaluating best of the 3 models with interpretability through SHAP
-│   └── dataAnalysis.ipynb          # Notebook with code on exploring the dataset and sampling options
-│   └── utils.py                    # File containing utility functions used in most notebooks
-├── data/                           # Contains the dataset
-│   └── best_decision_tree.joblib   # Best Performing Decision Tree trained, trained in decisionTree.ipynb
-│   └── best_knn.joblib             # Best Performing KNN trained, trained in knn.ipynb
-├── resources/                      # Contains presentation slides, papers, and other references
+├── code/                                   # Contains all source code, scripts, and Jupyter notebooks
+│   └── decisionTree.ipynb                  # Notebook with code on training process of the decision tree model
+│   └── knn.ipynb                           # Notebook with code on training process of the knn model
+│   └── neuralNetwork.ipynb                 # Notebook with code on training process of the neuralNetwork model
+│   └── bestModels.ipynb                    # Notebook with code on evaluating best of the 3 models with interpretability through SHAP
+│   └── dataAnalysis.ipynb                  # Notebook with code on exploring the dataset and sampling options
+│   └── utils.py                            # File containing utility functions used in most notebooks
+├── data/                                   # Contains the models
+│   └── best_decision_tree.joblib           # Best Performing Decision Tree trained, trained in decisionTree.ipynb
+│   └── best_knn.joblib                     # Best Performing KNN trained, trained in knn.ipynb
+│   └── best_neural_network_no_regs.joblib  # Best Performing Neural Network, trained in neuralNetwork.ipynb
+│   └── best_neural_network...              # All other Neural Networks that were trained      
+├── resources/                              # Contains presentation slides, papers, and other references
 │   └── presentation.pdf
-├── README.md                       # Project overview and instructions
-└── requirements.txt                # Lists all required Python packages```
+├── README.md                               # Project overview and instructions
+└── requirements.txt                        # Lists all required Python packages```
 ````
 
 ## How to Run the Project
